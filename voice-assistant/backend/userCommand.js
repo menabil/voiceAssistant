@@ -132,6 +132,13 @@ export async function handleCommand(userQuery, speakText, askOllama) {
     exec("shutdown /s /t 5", { windowsHide: true });
     return true;
   }
+  // 11.1. for pc restart
+  else if (lowerQuery.includes("restart") || lowerQuery.includes("রিস্টার্ট")) {
+    console.log("🔄 Action: Restarting PC...");
+    await speakText("পিসি রিস্টার্ট হচ্ছে বস, একটু অপেক্ষা করুন!");
+    exec("shutdown /r /t 5", { windowsHide: true });
+    return true;
+  }
 
   // 12. for open github
   else if (
